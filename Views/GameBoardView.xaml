@@ -1,0 +1,39 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:TicTacToe.Views"
+        x:Class="TicTacToe.Views.GameBoardView"
+        Title="Tic-Tac-Toe"
+        Width="300" Height="300">
+    <Grid>
+        <!-- Добавление сетки кнопок для игрового поля -->
+        <Grid x:Name="gameGrid" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            
+            <!-- Кнопки для клеток игрового поля -->
+            <Button x:Name="btn00" Grid.Row="0" Grid.Column="0" Click="Button_Click" FontSize="20"/>
+            <Button x:Name="btn01" Grid.Row="0" Grid.Column="1" Click="Button_Click" FontSize="20"/>
+            <Button x:Name="btn02" Grid.Row="0" Grid.Column="2" Click="Button_Click" FontSize="20"/>
+            <Button x:Name="btn10" Grid.Row="1" Grid.Column="0" Click="Button_Click" FontSize="20"/>
+            <Button x:Name="btn11" Grid.Row="1" Grid.Column="1" Click="Button_Click" FontSize="20"/>
+            <Button x:Name="btn12" Grid.Row="1" Grid.Column="2" Click="Button_Click" FontSize="20"/>
+            <Button x:Name="btn20" Grid.Row="2" Grid.Column="0" Click="Button_Click" FontSize="20"/>
+            <Button x:Name="btn21" Grid.Row="2" Grid.Column="1" Click="Button_Click" FontSize="20"/>
+            <Button x:Name="btn22" Grid.Row="2" Grid.Column="2" Click="Button_Click" FontSize="20"/>
+        </Grid>
+        
+        <!-- Отображение текущего игрока -->
+        <TextBlock x:Name="txtCurrentPlayer" Margin="10" Grid.Row="1" Grid.ColumnSpan="3" TextAlignment="Center" FontSize="16"/>
+        
+        <!-- Кнопка для перезапуска игры -->
+        <Button x:Name="btnRestart" Margin="10" Grid.Row="2" Grid.ColumnSpan="3" Content="Начать заново" Click="btnRestart_Click" FontSize="16"/>
+    </Grid>
+</Window>
