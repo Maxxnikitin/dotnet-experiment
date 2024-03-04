@@ -6,7 +6,7 @@ using TicTacToe.ViewModels;
 
 namespace TicTacToe.Views
 {
-  public class GameBoardView : Window
+  public class GameBoardView : UserControl
   {
     private GameLogic gameLogic;
 
@@ -61,14 +61,22 @@ namespace TicTacToe.Views
     {
       var dialog = new ErrorDialog();
       dialog.Content = message;
-      dialog.ShowDialog(this);
+      var mainWindow = this.VisualRoot as Window;
+      if (mainWindow != null)
+      {
+        dialog.ShowDialog(mainWindow);
+      }
     }
 
     private void ShowDrawDialog(string message)
     {
       var dialog = new ErrorDialog();
       dialog.Content = message;
-      dialog.ShowDialog(this);
+      var mainWindow = this.VisualRoot as Window;
+      if (mainWindow != null)
+      {
+        dialog.ShowDialog(mainWindow);
+      }
     }
 
     // Обновление отображения игрового поля
